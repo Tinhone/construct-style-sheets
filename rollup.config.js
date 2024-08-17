@@ -11,6 +11,7 @@ const rollupConfig = {
   input: 'src/index.ts',
   output: {
     file: 'dist/adoptedStyleSheets.js',
+    format: 'cjs',
     name: 'adoptedStyleSheets',
   },
   plugins: [
