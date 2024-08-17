@@ -18,7 +18,7 @@ const rollupConfig = {
       extensions,
     }),
     babel({ babelHelpers: 'bundled', extensions }),
-    cleanup(),
+    cleanup({ comments: 'all', sourcemap: 'false', extensions: ['.js'] }),
     copy({
       targets: [
         {
