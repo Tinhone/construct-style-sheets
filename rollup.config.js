@@ -1,9 +1,8 @@
 /* eslint-disable camelcase */
-import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
-import terser from '@rollup/plugin-terser';
+import babel from '@rollup/plugin-babel';
+import cleanup from 'rollup-plugin-cleanup';
 import copy from 'rollup-plugin-copy';
-import optimize from './plugins/rollup-plugin-optimize.cjs';
 
 const extensions = ['.ts', '.js'];
 
@@ -19,6 +18,7 @@ const rollupConfig = {
       extensions,
     }),
     babel({ babelHelpers: 'bundled', extensions }),
+    cleanup({ extensions }),
     copy({
       targets: [
         {
