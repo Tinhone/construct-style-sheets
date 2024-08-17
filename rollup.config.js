@@ -18,7 +18,7 @@ const rollupConfig = {
       extensions,
     }),
     babel({ babelHelpers: 'bundled', extensions }),
-    cleanup({ comments: 'istanbul', extensions }),
+    cleanup(),
     copy({
       targets: [
         {
