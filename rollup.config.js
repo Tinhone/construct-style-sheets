@@ -11,9 +11,24 @@ const rollupConfig = {
   input: 'src/index.ts',
   output: {
     file: 'dist/adoptedStyleSheets.js',
-    format: 'cjs',
+    format: 'iife',
     name: 'adoptedStyleSheets',
   },
+  plugins: [
+    nodeResolve({
+      extensions,
+    }),
+    babel({ babelHelpers: 'bundled', extensions }),
+    copy({
+      targets: [
+        {
+          dest: 'dist',
+          rename: 'adoptedStyleSheets.d.ts',
+          src: 'src/typings.d.ts',
+        },
+      ],
+    }),
+  ],
 };
 
 export default rollupConfig;
