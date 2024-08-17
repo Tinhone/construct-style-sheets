@@ -14,24 +14,6 @@ const rollupConfig = {
     format: 'cjs',
     name: 'adoptedStyleSheets',
   },
-  plugins: [
-    nodeResolve({
-      extensions,
-    }),
-    babel({ babelHelpers: 'bundled', extensions }),
-    copy({
-      targets: [
-        {
-          dest: 'dist',
-          rename: 'adoptedStyleSheets.d.ts',
-          src: 'src/typings.d.ts',
-        },
-      ],
-    }),
-    terser({
-      ecma: 2015,
-    }),
-  ],
 };
 
 export default rollupConfig;
