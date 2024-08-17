@@ -18,7 +18,6 @@ const rollupConfig = {
       extensions,
     }),
     babel({ babelHelpers: 'bundled', extensions }),
-    cleanup({ comments: 'all', sourcemap: 'false', extensions }),
     copy({
       targets: [
         {
@@ -28,6 +27,7 @@ const rollupConfig = {
         },
       ],
     }),
+    cleanup({ comments: 'all', sourcemap: 'false' }),
   ],
 };
 
