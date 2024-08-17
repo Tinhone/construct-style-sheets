@@ -52,6 +52,9 @@ export function attachAdoptedStyleSheetProperty(
     get(): ConstructedStyleSheet[] {
       return getAssociatedLocation(this).sheets;
     },
+    set(sheets: ConstructedStyleSheet[]) {
+      getAssociatedLocation(this).update(sheets);
+    },
   });
 }
 
