@@ -52,7 +52,7 @@ export function attachAdoptedStyleSheetProperty(
     get(): ConstructedStyleSheet[] {
       return getAssociatedLocation(this).sheets;
     },
-    set(sheets: ConstructedStyleSheet[]) {
+    set(sheets: AdoptedStyleSheetsArray) {
       getAssociatedLocation(this).update(sheets);
     },
   });
