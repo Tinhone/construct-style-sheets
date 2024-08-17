@@ -28,7 +28,6 @@ const rollupConfig = {
         },
       ],
     }),
-    optimize(),
     terser({
       compress: {
         booleans_as_integers: true,
