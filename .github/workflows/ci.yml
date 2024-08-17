@@ -2,7 +2,6 @@ name: Build
 
 on:
   push:
-    branches: [feat/support-latest-spec]
     paths:
       - '.github/workflows/ci.yml'
       - 'plugins/**'
@@ -19,17 +18,11 @@ on:
 jobs:
   build:
     name: 'Build'
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        os: [windows-2019, macOS-11]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Project Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Use NodeJS ${{ matrix.node-version }}
@@ -44,3 +37,9 @@ jobs:
         run: npm run build
         env:
           CI: true
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Dist.js
+          path: dist/adoptedStyleSheets.js
+          
