@@ -29,22 +29,6 @@ const rollupConfig = {
       ],
     }),
     terser({
-      compress: {
-        booleans_as_integers: true,
-        passes: 3,
-        pure_funcs: [
-          'unique',
-          'diff',
-          'getShadowRoot',
-          'isElementConnected',
-          'rejectImports',
-          'removeNode',
-        ],
-        toplevel: true,
-        unsafe: true,
-        unsafe_proto: true,
-        unsafe_symbols: true,
-      },
       ecma: 2015,
     }),
   ],
