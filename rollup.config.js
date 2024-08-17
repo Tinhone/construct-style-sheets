@@ -11,7 +11,6 @@ const rollupConfig = {
   input: 'src/index.ts',
   output: {
     file: 'dist/adoptedStyleSheets.js',
-    format: 'iife',
     name: 'adoptedStyleSheets',
   },
   plugins: [
